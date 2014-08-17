@@ -1,4 +1,4 @@
-/*
+
 function animateCanvas(cj, canvas) {
   var stage = new cj.Stage(canvas)
 
@@ -45,4 +45,3 @@ function animateCanvas(cj, canvas) {
     animateCanvas(cj,canvas);
   }
 })(createjs);
-*/
