@@ -1,0 +1,31 @@
+# Header
+menu:
+  Home: /
+  About : /about
+  Sponsors : /sponsors
+  "Thunder Plains" : http://thunderplainsconf.com/
+  "Newsletter" : http://okcjs.us4.list-manage1.com/subscribe?u=a821c039e4e223f3947115270&id=694900f2a9
+  Archives: /archives
+  
+rss: /atom.xml
+
+# Content
+excerpt_link: Read More
+fancybox: true
+
+# Sidebar
+sidebar: right
+widgets:
+- category
+- tag
+- tagcloud
+- archive
+- recent_posts
+
+# Miscellaneous
+google_analytics:
+favicon: /favicon.png
+twitter:
+google_plus:
+fb_admins:
+fb_app_id:
