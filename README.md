@@ -1,27 +1,27 @@
-# Landscape
+# OKC.js Theme
 
-A brand new default theme for [Hexo].
+A  theme for [Hexo] based initially on the landscape theme, but heavily modified.
 
-- [Preview](http://hexo.io/hexo-theme-landscape/)
+- [Preview](http://okcjs.com/)
 
 ## Installation
 
 ### Install
 
 ``` bash
-$ git clone https://github.com/hexojs/hexo-theme-landscape.git themes/landscape
+$ git clone https://github.com/techlahoma/hexo-theme-okcjs.git themes/okcjs
 ```
 
-**Landscape requires Hexo 2.4 and above.**
+**OKCjs requires Hexo 2.4 and above.**
 
 ### Enable
 
-Modify `theme` setting in `_config.yml` to `landscape`.
+Modify `theme` setting in `_config.yml` to `okcjs`.
 
 ### Update
 
 ``` bash
-cd themes/landscape
+cd themes/okcjs
 git pull
 ```
 
