@@ -1,6 +1,6 @@
 function animateCanvas(cj, canvas) {
 
-  var speed = 72;
+  var speed = 120;
 
   function handleLoadGradient(evt) {
 
@@ -22,8 +22,8 @@ function animateCanvas(cj, canvas) {
   var skyline = new createjs.Bitmap('/js/img/okc_skyline.png');
   skyline.x = (canvas.width * 0.5) - 450;
   skyline.y = 0;
-  
-  var scale= 2
+
+  var scale = 2
   var gradientHeight = 1980 * scale;
   var start = -gradientHeight + 325,
     end = 0;
