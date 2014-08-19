@@ -1,10 +1,10 @@
 function animateCanvas(cj, canvas) {
-  
-  var speed = 24;
-  
+
+  var speed = 72;
+
   function handleLoadGradient(evt) {
 
- 
+
     timeOfDayGradient.regX = timeOfDayGradient.image.width / 2;
 
   }
@@ -22,28 +22,29 @@ function animateCanvas(cj, canvas) {
   var skyline = new createjs.Bitmap('/js/img/okc_skyline.png');
   skyline.x = (canvas.width * 0.5) - 450;
   skyline.y = 0;
-
-
-  var start = -1980 + 325,
-      end = 0;
+  
+  var scale= 2
+  var gradientHeight = 1980 * scale;
+  var start = -gradientHeight + 325,
+    end = 0;
   var gradientImage = new Image();
   gradientImage.src = '/js/img/TimeOfDayGradient.jpg';
   gradientImage.onload = handleLoadGradient;
   var timeOfDayGradient = new createjs.Bitmap(gradientImage).set({
     x: canvas.width * 0.5,
-    y:start
+    y: start
   });
 
-  timeOfDayGradient.scaleX = timeOfDayGradient.scaleY = 1
+  timeOfDayGradient.scaleX = timeOfDayGradient.scaleY = scale
   stage.addChild(timeOfDayGradient);
 
   cj.Tween.get(timeOfDayGradient, {
     loop: true
   }).to({
     y: end
-  }, (speed* 0.5) * 1000).to({
+  }, (speed * 0.5) * 1000).to({
     y: start
-    
+
   }, (speed * 0.5) * 1000)
 
 
@@ -65,7 +66,7 @@ function animateCanvas(cj, canvas) {
     .to({
       rotation: 360
     }, speed * 1000)
-   
+
 
   stage.addChild(skyline);
 
