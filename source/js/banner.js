@@ -185,8 +185,8 @@ function animateCanvas(cj, canvas) {
     }
 
 
-    var fcloudsAmt = rand(10, 25);
-    var bCloudsAmt = rand(5, 35);
+    var fcloudsAmt = rand(12, 24);
+    var bCloudsAmt = rand(10, 30);
 
     var starsAmt = rand(1700, 3000);
 
@@ -332,7 +332,7 @@ function animateCanvas(cj, canvas) {
 
   //on repeat
   cj.Ticker.addEventListener('tick', tick);
-  createjs.Ticker.setFPS(20);
+  createjs.Ticker.setFPS(15);
 }
 
 (function (cj) {
