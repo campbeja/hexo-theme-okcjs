@@ -45,6 +45,8 @@
 
   var p = Star.prototype = new createjs.Container();
 
+
+
   Star.prototype.Container_initialize = p.initialize;
 
   Star.prototype.initialize = function initialize(options) {
@@ -53,6 +55,10 @@
     this.x = options.x;
     this.y = options.y;
     this.radius = options.radius;
+    this.opacity = options.opacity;
+
+
+    var isTwinkler = Math.random() > 0.4;
 
     var particle = new createjs.Shape();
 
@@ -65,6 +71,24 @@
       .endFill();
 
     this.addChild(particle);
+
+    if (isTwinkler) {
+      var on = (Math.random() * 3000) + 500,
+        off = (Math.random() * 3000) + 500;
+
+      createjs
+        .Tween
+        .get(particle, {
+          loop: true
+        })
+        .to({
+          alpha: 0
+        }, on)
+        .to({
+          alpha: 1
+        }, off);
+    }
+
   };
 
   window.Star = Star;
@@ -155,7 +179,7 @@ function animateCanvas(cj, canvas) {
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
         radius: rand(1, 3),
-        glow: rand(1, 4),
+        glow: rand(1,5, 6),
         opacity: rand(8, 9) * 0.1
       };
     }
@@ -164,7 +188,7 @@ function animateCanvas(cj, canvas) {
     var fcloudsAmt = rand(10, 30);
     var bCloudsAmt = rand(5, 45);
 
-    var starsAmt = rand(1200, 1600);
+    var starsAmt = rand(1700, 3000);
 
     for (var k = 0; k < fcloudsAmt; k++) {
       var opts = fcOptions();
