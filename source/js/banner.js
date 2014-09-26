@@ -74,7 +74,7 @@
 
 function animateCanvas(cj, canvas) {
 
-  var speed = 40;
+  var speed = 120;
 
   var stage,
     skyline,
@@ -118,12 +118,9 @@ function animateCanvas(cj, canvas) {
       y: 325
     });
 
-
     function rand(lo, high) {
-
       return (Math.random() * (high - lo)) + lo;
     }
-
 
     function fcOptions() {
       return {
@@ -138,7 +135,6 @@ function animateCanvas(cj, canvas) {
         }
       };
     }
-
 
     function bcOptions() {
       return {
@@ -161,7 +157,7 @@ function animateCanvas(cj, canvas) {
         radius: rand(1, 3),
         glow: rand(1, 4),
         opacity: rand(8, 9) * 0.1
-      }
+      };
     }
 
 
