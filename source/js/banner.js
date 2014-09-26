@@ -74,7 +74,7 @@
 
 function animateCanvas(cj, canvas) {
 
-  var speed = 180;
+  var speed = 200;
 
   var stage,
     skyline,
