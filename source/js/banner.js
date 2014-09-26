@@ -74,7 +74,7 @@
 
 function animateCanvas(cj, canvas) {
 
-  var speed = 120;
+  var speed = 180;
 
   var stage,
     skyline,
@@ -308,7 +308,7 @@ function animateCanvas(cj, canvas) {
 
   //on repeat
   cj.Ticker.addEventListener('tick', tick);
-  createjs.Ticker.setFPS(24);
+  createjs.Ticker.setFPS(20);
 }
 
 (function (cj) {
