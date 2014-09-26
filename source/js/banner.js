@@ -25,12 +25,19 @@
 
       particle
         .graphics
-        .beginRadialGradientFill(["rgba(255, 255, 255, " + po.transparency + ")", "rgba(255, 255,255, 0)"], [0, 1], particleX, particleY, 0, particleX, particleY, po.radius)
+        .beginRadialGradientFill(
+          ["rgba(255, 255, 255, " + po.transparency + ")", "rgba(255, 255,255, 0)"], [0, 1], particleX, particleY,
+          0, particleX, particleY,
+          po.radius
+      )
         .drawCircle(particleX, particleY, po.radius)
         .endFill();
 
+      particle.snapToPixel = true;
       this.addChild(particle);
     }
+
+
   };
 
   window.Cloud = Cloud;
@@ -58,7 +65,7 @@
     this.opacity = options.opacity;
 
 
-    var isTwinkler = Math.random() > 0.4;
+    var isTwinkler = Math.random() > 0.5;
 
     var particle = new createjs.Shape();
 
@@ -69,6 +76,8 @@
       ], [0, 1], options.x, options.y, 0, options.x, options.y, options.radius)
       .drawCircle(options.x, options.y, options.glow)
       .endFill();
+
+    particle.snapToPixel = true;
 
     this.addChild(particle);
 
@@ -132,6 +141,8 @@ function animateCanvas(cj, canvas) {
     //--
     skyline = new cj.Bitmap('/js/img/okc_skyline.png');
 
+
+
     timeOfDayGradient = createImage('/js/img/TimeOfDayGradient.jpg', loadTodGradient, {
       x: canvas.width * 0.5,
       y: start
@@ -179,7 +190,7 @@ function animateCanvas(cj, canvas) {
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
         radius: rand(1, 3),
-        glow: rand(1,5, 6),
+        glow: rand(1, 5, 6),
         opacity: rand(8, 9) * 0.1
       };
     }
@@ -188,16 +199,26 @@ function animateCanvas(cj, canvas) {
     var fcloudsAmt = rand(12, 24);
     var bCloudsAmt = rand(10, 30);
 
-    var starsAmt = rand(1700, 3000);
+    var starsAmt = rand(1700, 2500);
 
     for (var k = 0; k < fcloudsAmt; k++) {
       var opts = fcOptions();
-      frontClouds.push(new Cloud(opts));
+
+      var c = new Cloud(opts);
+      var r = opts.particleOptions.radius;
+
+      c.cache(-r, -r, opts.width + (2 * r), opts.height + (2 * r), 1);
+
+      frontClouds.push(c);
     }
 
     for (var k = 0; k < bCloudsAmt; k++) {
       var opts = bcOptions();
-      backClouds.push(new Cloud(opts));
+      var r = opts.particleOptions.radius;
+      var c = new Cloud(opts);
+      c.cache(-r, -r, opts.width + (2 * r), opts.height + (2 * r), 1);
+
+      backClouds.push(c);
     }
 
     for (var k = 0; k < starsAmt; k++) {
@@ -217,7 +238,7 @@ function animateCanvas(cj, canvas) {
   }
 
   function addElements() {
-    stage.addChild(timeOfDayGradient);
+      stage.addChild(timeOfDayGradient);
 
     for (var t = 0, tt = stars.length; t < tt; t++) {
       stage.addChild(stars[t]);
@@ -233,6 +254,8 @@ function animateCanvas(cj, canvas) {
     for (var t = 0, tt = frontClouds.length; t < tt; t++) {
       stage.addChild(frontClouds[t]);
     }
+
+    stage.snapToPixelsEnabled = true;
   }
 
 
@@ -296,8 +319,6 @@ function animateCanvas(cj, canvas) {
         .to({
           x: cloud.x
         }, cloudSpeed * (canvas.width / cloud.x));
-
-
     }
 
 
@@ -315,6 +336,9 @@ function animateCanvas(cj, canvas) {
   function scaleElements() {
     skyline.x = (canvas.width * 0.5) - 450;
     skyline.y = 0;
+
+
+
     timeOfDayGradient.scaleX = timeOfDayGradient.scaleY = scale;
     sunMoon.scaleX = sunMoon.scaleY = 0.4;
   }
@@ -332,7 +356,7 @@ function animateCanvas(cj, canvas) {
 
   //on repeat
   cj.Ticker.addEventListener('tick', tick);
-  createjs.Ticker.setFPS(15);
+  createjs.Ticker.setFPS(30);
 }
 
 (function (cj) {
