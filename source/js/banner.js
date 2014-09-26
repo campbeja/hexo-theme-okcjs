@@ -185,8 +185,8 @@ function animateCanvas(cj, canvas) {
     }
 
 
-    var fcloudsAmt = rand(10, 30);
-    var bCloudsAmt = rand(5, 45);
+    var fcloudsAmt = rand(10, 25);
+    var bCloudsAmt = rand(5, 35);
 
     var starsAmt = rand(1700, 3000);
 
