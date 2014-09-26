@@ -1,8 +1,12 @@
 # OKC.js Theme
+![OKCjs](http://i.imgur.com/4z9STLh.png)
 
 A  theme for [Hexo] based initially on the landscape theme, but heavily modified.
 
 - [Preview](http://okcjs.com/)
+
+
+
 
 ## Installation
 
