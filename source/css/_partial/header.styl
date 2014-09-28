@@ -66,12 +66,12 @@
 	height: header-title-graphic-h
 	background: url(title-graphic-url) center transparent
 
-
+        
 $logo-text
   text-decoration: none
   color: #fff
   font-weight: 300
-  text-shadow: 0 2px 9px rgba(0,0,0,0.8)
+  text-shadow: 0 2px 9px rgba(0,0,0,0.9)
 
 #logo
   @extend $logo-text
@@ -84,6 +84,12 @@ $logo-text
   font-size: subtitle-size
   line-height: subtitle-size
   letter-spacing: 1px
+  @media mq-tablet
+    font-size: subtitle-size-tablet
+    line-height: subtitle-size-tablet
+  @media mq-mobile
+    font-size: subtitle-size-mobile
+    line-height: subtitle-size-mobile
 
 #subtitle-wrap
   margin-top: subtitle-size

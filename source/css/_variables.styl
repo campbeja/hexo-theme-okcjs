@@ -31,13 +31,18 @@ line-height = 1.6em
 line-height-title = 1.1em
 
 // Header
-logo-size = 95px
-subtitle-size = 26px
+logo-size = 90px
+subtitle-size = 34px
+subtitle-size-tablet = subtitle-size * 0.7
+subtitle-size-mobile = subtitle-size
 banner-height = 325px
 banner-url = "images/banner.jpg"
 title-graphic-url = "images/okcjs-header-logo-dshadow.png"
 header-title-graphic-w = 300px
 header-title-graphic-h = 155px
+
+header-title-graphic-w-tablet = 250px
+header-title-graphic-h-tablet = 100px
 
 sidebar = hexo-config("sidebar")
 
@@ -61,5 +66,6 @@ columns = main-column + _sidebar-column
 // Media queries
 mq-mobile = "screen and (max-width: 479px)"
 mq-tablet = "screen and (min-width: 480px) and (max-width: 767px)"
-mq-normal = "screen and (min-width: 768px)"
+mq-normal = "screen and (min-width: 768px) and (max-width: 959px)"
+mq-large = "screen and (min-width: 960px)"
 
