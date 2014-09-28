@@ -112,7 +112,7 @@
             var opts = starOptions();
             map.addChild(new Star(opts));
         }
-
+        map.snapToPixel = true;
         map.cache(0, 0, options.width, options.height, 1);
 
         this.addChild(map);
