@@ -2,11 +2,10 @@
 menu:
   Home: /
   About : /about
-  Sponsors : /sponsors
-  "Thunder Plains" : http://thunderplainsconf.com/
+  Learn: /learn
   "Newsletter" : http://okcjs.us4.list-manage1.com/subscribe?u=a821c039e4e223f3947115270&id=694900f2a9
-  Archives: /archives
-  
+  Sponsors : /sponsors
+
 rss: /atom.xml
 
 # Content
@@ -17,15 +16,15 @@ fancybox: true
 sidebar: right
 widgets:
 - category
+- recent_posts
 - tag
 - tagcloud
 - archive
-- recent_posts
 
 # Miscellaneous
-google_analytics:
+google_analytics: UA-57887284-1
 favicon: /favicon.png
-twitter:
+twitter: okcjs
 google_plus:
 fb_admins:
 fb_app_id:
